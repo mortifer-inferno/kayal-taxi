@@ -85,7 +85,16 @@ h3 {
   background: var(--header-bg);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line-soft);
-  transition: background .35s ease, border-color .35s ease;
+  transition: background .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+#site-header.scrolled {
+  box-shadow: 0 10px 26px -20px rgba(8, 38, 34, .5);
+}
+
+#site-header.scrolled .nav {
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .nav {
@@ -93,6 +102,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   padding: 18px 32px;
+  transition: padding .3s ease;
 }
 
 .brand {
@@ -292,6 +302,34 @@ h3 {
   display: block;
 }
 
+/* Houseboat gently rocks and drifts left, independent of the scroll parallax
+   on its parent group — the two transforms compose rather than conflict. */
+.boat-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: boat-drift 9s ease-in-out infinite;
+}
+
+@keyframes boat-drift {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-16px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .boat-float {
+    animation: none;
+  }
+}
+
 .hero-copy {
   position: relative;
   z-index: 2;
@@ -346,7 +384,7 @@ h3 {
   transform: translateX(-50%);
   color: var(--cream);
   opacity: .75;
-  animation: hint-bounce 2.2s ease-in-out infinite;
+  animation: hint-float-left 2.2s ease-in-out infinite;
   transition: opacity .3s ease;
 }
 
@@ -360,15 +398,15 @@ h3 {
   opacity: 1;
 }
 
-@keyframes hint-bounce {
+@keyframes hint-float-left {
 
   0%,
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateX(0);
   }
 
   50% {
-    transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateX(-9px);
   }
 }
 
@@ -587,18 +625,30 @@ section {
   object-fit: cover;
   object-position: center 65%;
   display: block;
-  transition: transform .6s cubic-bezier(.2, .8, .3, 1);
+  transition: transform .6s cubic-bezier(.2, .8, .3, 1), opacity .9s ease;
 }
 
 .pkg:hover .pkg-art img {
   transform: scale(1.1) rotate(-1deg);
 }
 
+/* Photo settles into focus a beat after the card itself rises into view */
+.pkg.reveal .pkg-art img {
+  opacity: 0;
+  transform: scale(1.14);
+}
+
+.pkg.in .pkg-art img {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion:reduce) {
 
   .pkg-art img,
-  .pkg:hover .pkg-art img {
+  .pkg:hover .pkg-art img,
+  .pkg.reveal .pkg-art img {
     transform: none !important;
+    opacity: 1 !important;
     transition: none !important;
   }
 }
