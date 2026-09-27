@@ -235,13 +235,17 @@ if (supportsHover && !prefersReducedMotion) {
   }, 120);
 })();
 
-// --- Subtle hero parallax on scroll ---
+// --- Subtle hero parallax on scroll (multi-layer depth) ---
 (function () {
   if (prefersReducedMotion) return;
   var scene = document.querySelector(".hero-scene");
   var copy = document.querySelector(".hero-copy");
   var hint = document.querySelector(".scroll-hint");
   var hero = document.querySelector(".hero");
+  var sun = document.getElementById("layer-sun");
+  var water = document.getElementById("layer-water");
+  var palms = document.getElementById("layer-palms");
+  var boat = document.getElementById("layer-boat");
   if (!scene || !hero) return;
 
   var ticking = false;
@@ -251,9 +255,19 @@ if (supportsHover && !prefersReducedMotion) {
     // Only animate while the hero is at least partly on screen.
     if (rect.bottom > 0 && rect.top < window.innerHeight) {
       var progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
-      var scale = 1 + progress * 0.1;
-      scene.style.transform =
-        "translateY(" + progress * 60 + "px) scale(" + scale.toFixed(3) + ")";
+      var scale = 1 + progress * 0.06;
+      scene.style.transform = "scale(" + scale.toFixed(3) + ")";
+
+      // Each layer drifts at its own speed — background elements move
+      // least, foreground elements move most — so the scene reads as
+      // having real depth rather than sliding as one flat image.
+      if (sun) sun.style.transform = "translateY(" + progress * 16 + "px)";
+      if (water) water.style.transform = "translateY(" + progress * 34 + "px)";
+      if (palms) palms.style.transform = "translateY(" + progress * 60 + "px)";
+      if (boat)
+        boat.style.transform =
+          "translate(430px, " + (388 + progress * 82) + "px)";
+
       if (copy) {
         copy.style.transform = "translateY(" + progress * 30 + "px)";
         copy.style.opacity = String(1 - progress * 0.6);
@@ -277,4 +291,29 @@ if (supportsHover && !prefersReducedMotion) {
   );
 
   updateParallax();
+})();
+
+// --- Header compacts and firms up once you've scrolled past the hero ---
+(function () {
+  var header = document.getElementById("site-header");
+  if (!header) return;
+  var ticking = false;
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  updateHeader();
 })();
