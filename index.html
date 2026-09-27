@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kayal — Kerala, Chauffeured</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 44 44" width="30" height="30"><path d="M6 27c5-3 9-3 13 0s9 3 13 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M22 8v15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M13 16c4 3 14 3 18 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Kayal</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#packages">Packages</a><a href="#fleet">Fleet</a><a href="#story">The Kayal Way</a><a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a class="nav-cta" href="#book">Reserve a car</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-scene" aria-hidden="true">
+      <svg viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F4E3B2"/><stop offset=".55" stop-color="#E7B06B"/><stop offset="1" stop-color="#0B3B36"/>
+          </linearGradient>
+          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0F433D"/><stop offset="1" stop-color="#082622"/>
+          </linearGradient>
+        </defs>
+        <rect width="1200" height="640" fill="url(#sky)"/>
+        <circle cx="960" cy="150" r="70" fill="#F7F2E7" opacity=".85"/>
+        <path d="M0 430 Q300 400 600 425 T1200 415 V640 H0Z" fill="url(#water)"/>
+        <g opacity=".5" stroke="#B8902F" stroke-width="1">
+          <path d="M40 470 Q300 452 560 474" fill="none"/>
+          <path d="M600 500 Q850 480 1160 502" fill="none"/>
+        </g>
+        <g id="palms" fill="#0B3B36">
+          <path d="M60 430c0-40 10-70 10-70s25 20 5 45c15-10 35-6 35 10-20-8-35 2-50 15z"/>
+          <path d="M60 360v70" stroke="#0B3B36" stroke-width="5"/>
+          <path d="M1120 445c0-36 9-62 9-62s22 18 4 40c14-9 31-5 31 9-18-7-31 2-44 13z"/>
+          <path d="M1129 383v62" stroke="#0B3B36" stroke-width="4"/>
+        </g>
+        <g transform="translate(430,388)">
+          <path d="M0 40c0-14 6-22 20-22h180c14 0 20 8 20 22v18H0z" fill="#3E2013"/>
+          <rect x="35" y="8" width="150" height="26" rx="3" fill="#6B3A22"/>
+          <rect x="48" y="-8" width="14" height="18" fill="#6B3A22"/>
+          <rect x="93" y="-8" width="14" height="18" fill="#6B3A22"/>
+          <rect x="138" y="-8" width="14" height="18" fill="#6B3A22"/>
+          <path d="M0 58h220" stroke="#082622" stroke-width="2" opacity=".4"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap hero-copy">
+      <p class="kicker">Chauffeured travel, Kerala-wide</p>
+      <h1>The backwaters wait.<br><em>Arrive unhurried.</em></h1>
+      <p class="lede">A private car and a driver who reads the road, not the meter — for airport runs, coastal drives, and the long way through the hills.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#book">Reserve a car</a>
+        <a class="btn btn-line" href="#packages">Browse packages</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="booker-wrap">
+    <div class="wrap">
+      <div class="booker" id="book">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="transfer" role="tab" aria-selected="true">City &amp; Airport</button>
+          <button class="tab" data-tab="package" role="tab" aria-selected="false">Tour Package</button>
+        </div>
+
+        <div class="panel active" id="panel-transfer">
+          <div class="grid">
+            <label class="field"><span>Pickup</span><input id="t-pickup" placeholder="Cochin International Airport"></label>
+            <label class="field"><span>Drop</span><input id="t-drop" placeholder="Fort Kochi"></label>
+            <label class="field"><span>Date</span><input id="t-date" type="date"></label>
+            <label class="field"><span>Car</span>
+              <select id="t-car"><option>Sedan — Dzire / Etios</option><option>SUV — Innova Crysta</option><option>Luxury Sedan — Camry</option><option>Tempo Traveller · 12 seat</option></select>
+            </label>
+          </div>
+          <button class="btn btn-dark submit" data-form="transfer">Check availability</button>
+          <p class="confirm" id="confirm-transfer"></p>
+        </div>
+
+        <div class="panel" id="panel-package">
+          <div class="grid">
+            <label class="field"><span>Package</span>
+              <select id="p-pkg"><option>Munnar Hills — 2N/3D</option><option>Alleppey Backwaters — 1N/2D</option><option>Kovalam Coast — 3N/4D</option><option>Thekkady Wildlife — 2N/3D</option><option>Kochi Heritage — Full day</option></select>
+            </label>
+            <label class="field"><span>Start date</span><input id="p-date" type="date"></label>
+            <label class="field"><span>Travellers</span><input id="p-pax" type="number" min="1" value="2"></label>
+            <label class="field"><span>Car</span>
+              <select id="p-car"><option>SUV — Innova Crysta</option><option>Luxury Sedan — Camry</option><option>Tempo Traveller · 12 seat</option></select>
+            </label>
+          </div>
+          <button class="btn btn-dark submit" data-form="package">Request itinerary</button>
+          <p class="confirm" id="confirm-package"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Curated routes</p>
+        <h2>Five ways to see Kerala <em>properly</em>.</h2>
+        <p>Car, driver, fuel and tolls included. Pace set by you.</p>
+      </div>
+      <div class="pkg-row">
+
+        <article class="pkg">
+          <div class="pkg-art a-hills"><img src="https://imaggeo.egu.eu/media/uploads/2018/02/13/12680/acd6a98653df5eaaa51c15ff54786de9b444903b10ec5555fe0e59a790e1d421.jpg" alt="Tea plantations in the hills of Munnar" loading="lazy"><span class="photo-credit">Photo: Anya Schlich-Davies, CC BY 3.0</span></div>
+          <div class="pkg-body">
+            <span class="tag">2N · 3D</span>
+            <h3>Munnar Hills</h3>
+            <p>Ghat roads through tea gardens, a spice-estate stop, sunrise at Top Station.</p>
+            <div class="pkg-foot"><span class="price">₹14,500</span><a href="#book">Reserve →</a></div>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="pkg-art a-water"><img src="images/alleppey.png" alt="Houseboats on the Alleppey backwaters" loading="lazy"></div>
+          <div class="pkg-body">
+            <span class="tag">1N · 2D</span>
+            <h3>Alleppey Backwaters</h3>
+            <p>Timed transfer to your houseboat check-in and back, no waiting on either end.</p>
+            <div class="pkg-foot"><span class="price">₹6,800</span><a href="#book">Reserve →</a></div>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="pkg-art a-coast"><img src="images/kovalam.png" alt="Kovalam lighthouse and coastline" loading="lazy"></div>
+          <div class="pkg-body">
+            <span class="tag">3N · 4D</span>
+            <h3>Kovalam Coast</h3>
+            <p>Lighthouse Beach, Poovar's quiet backwaters, an Ayurveda stop on the coast road.</p>
+            <div class="pkg-foot"><span class="price">₹21,200</span><a href="#book">Reserve →</a></div>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="pkg-art a-wild"><img src="images/thekkady.png" alt="Elephants by the water at Thekkady" loading="lazy"></div>
+          <div class="pkg-body">
+            <span class="tag">2N · 3D</span>
+            <h3>Thekkady Wildlife</h3>
+            <p>Spice-town roads, a boat safari on Periyar Lake, cardamom-hill viewpoints.</p>
+            <div class="pkg-foot"><span class="price">₹16,000</span><a href="#book">Reserve →</a></div>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="pkg-art a-heritage"><img src="images/kochi.png" alt="Chinese fishing nets at sunset, Fort Kochi" loading="lazy"></div>
+          <div class="pkg-body">
+            <span class="tag">Full day</span>
+            <h3>Kochi Heritage</h3>
+            <p>Chinese fishing nets, the Dutch Palace, Jew Town, sunset at the harbour.</p>
+            <div class="pkg-foot"><span class="price">₹4,200</span><a href="#book">Reserve →</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="fleet" class="fleet">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">The cars</p>
+        <h2>Built for the road, kept like new.</h2>
+      </div>
+      <div class="fleet-row">
+        <div class="fleet-item">
+          <div class="fleet-stage"><img src="images/dzire.png" alt="Maruti Suzuki Dzire" loading="lazy"></div>
+          <h4>Dzire</h4><p>Sedan — up to 3</p>
+        </div>
+        <div class="fleet-item">
+          <div class="fleet-stage"><img src="images/etios.png" alt="Toyota Etios" loading="lazy"></div>
+          <h4>Etios</h4><p>Sedan — up to 3</p>
+        </div>
+        <div class="fleet-item">
+          <div class="fleet-stage"><img src="images/innova.png" alt="Toyota Innova" loading="lazy"></div>
+          <h4>Innova</h4><p>SUV — up to 6</p>
+        </div>
+        <div class="fleet-item">
+          <div class="fleet-stage"><img src="images/crysta.png" alt="Toyota Innova Crysta" loading="lazy"></div>
+          <h4>Innova Crysta</h4><p>SUV — up to 6</p>
+        </div>
+        <div class="fleet-item accent">
+          <div class="fleet-stage"><img src="images/camry.png" alt="Toyota Camry" loading="lazy"></div>
+          <h4>Camry</h4><p>Luxury sedan, chauffeured — up to 3</p>
+        </div>
+        <div class="fleet-item">
+          <div class="fleet-stage"><img src="images/tempo.png" alt="Force Tempo Traveller" loading="lazy"></div>
+          <h4>Tempo Traveller</h4><p>Up to 12, generous luggage room</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap story-grid">
+      <div class="story-art arch a-story">
+      </div>
+      <div>
+        <p class="kicker">The Kayal way</p>
+        <h2>Eleven years of knowing which turn comes next.</h2>
+        <p>Kayal means backwater — the quiet, unhurried kind of travel we build every route around. Our drivers are local to the routes they run, background-checked, and briefed on your plan before the wheels turn. One fare, agreed before you leave, covers fuel and tolls both ways.</p>
+        <div class="stats">
+          <div><strong>11 yrs</strong><span>on Kerala's roads</span></div>
+          <div><strong>40+</strong><span>chauffeurs on call</span></div>
+          <div><strong>24/7</strong><span>airport desk</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <blockquote>“Our driver knew exactly when to stop for the view and when to push on before the light went. It felt arranged by someone who actually knows the road.”</blockquote>
+      <cite>— A Kayal guest, Alleppey route</cite>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top"><svg viewBox="0 0 44 44" width="26" height="26"><path d="M6 27c5-3 9-3 13 0s9 3 13 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M22 8v15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Kayal</span></a>
+      <p class="foot-tag">Chauffeured cars for Kerala's cities, coasts and hill roads.</p>
+    </div>
+    <div>
+      <h5>Get in touch</h5>
+      <a href="tel:+914841234567">+91 484 123 4567</a>
+      <a href="mailto:book@kayal.travel">book@kayal.travel</a>
+      <a href="#">Fort Kochi, Kerala</a>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="#packages">Packages</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#book">Reserve a car</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">© 2026 Kayal Travels · Fares shown are indicative and confirmed at booking.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
