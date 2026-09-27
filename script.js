@@ -48,7 +48,7 @@ document.querySelectorAll(".tab").forEach(function (tab) {
 
 // --- WhatsApp booking alerts via WhatsApp's own click-to-chat link ---
 // No bot, no API key, no backend — just fill in your business WhatsApp number below.
-const WHATSAPP_BUSINESS_NUMBER = "918129763926"; // <-- your number, country code first, digits only (no + or spaces)
+const WHATSAPP_BUSINESS_NUMBER = "916282146726"; // <-- your number, country code first, digits only (no + or spaces)
 
 function sendBookingToWhatsApp(payload) {
   var text =
